@@ -8,31 +8,44 @@ const Container = styled(motion.div)`
     width: 100%;
     background-color: #f0f0f012;
     border-radius: 8px;
-    padding: 20px 80px;
+    padding: 20px 40px;
     h1 {
         font-size: 32px;
         padding-bottom: 20px;
         text-align: center;
     }
+    @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+        padding: 20px 0px;
+    }
 `;
 
 const Wrapper = styled.div`
     display: flex;
+    gap: 10px;
+    @media screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+        flex-direction: column;
+    }
 `;
 
 const ImgBox = styled.div`
-    padding: 0 20px;
     flex-grow: 1;
     max-width: 50%;
     min-width: 50%;
     position: relative;
     overflow: hidden;
-
+    height: 350px;
     &:hover {
         .nav-button {
             opacity: 1;
             pointer-events: auto;
         }
+    }
+
+    @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+        padding: 0 5px;
+    }
+    @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+        max-width: 100%;
     }
 `;
 
@@ -72,11 +85,11 @@ const NavButton = styled.div`
 `;
 
 const LeftNavButton = styled(NavButton)`
-    left: 25px;
+    left: 0px;
 `;
 
 const RightNavButton = styled(NavButton)`
-    right: 25px;
+    right: 0px;
 `;
 
 const InfoBox = styled.div`
@@ -87,6 +100,12 @@ const InfoBox = styled.div`
     hr {
         width: 30%;
         margin-left: 0px;
+    }
+    @media screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+        hr {
+            width: 80%;
+        }
+        padding: 0 10px;
     }
 `;
 const InfoTitle = styled.div`
@@ -147,9 +166,11 @@ const imgVariants = {
 const containerVariants = {
     init: {
         scale: 0,
+        opacity: 0,
     },
     show: (isCardVisible: boolean) => ({
         scale: isCardVisible ? 1 : 0,
+        opacity: 1,
     }),
 };
 
@@ -164,7 +185,7 @@ export default function ProjectCard(project: IProjectCard) {
             (entries) => {
                 setIsCardVisible(entries[0].isIntersecting);
             },
-            { threshold: 0.4 }
+            { threshold: 0.05 }
         );
 
         const element = document.getElementById(`project-${project.title}`); // ProjectCard의 id를 지정할 때 사용합니다.

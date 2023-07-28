@@ -6,6 +6,11 @@ interface ITheme extends DefaultTheme {
         text: string;
         card: string;
     };
+    breakpoints: {
+        sm: string;
+        md: string;
+        lg: string;
+    };
 }
 
 export const theme: ITheme = {
@@ -13,5 +18,10 @@ export const theme: ITheme = {
         bg: `#2f3640`,
         text: `#fff`,
         card: '#353b48',
+    },
+    breakpoints: {
+        sm: '480px',
+        md: '768px',
+        lg: '1024px',
     },
 };

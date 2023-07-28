@@ -6,6 +6,9 @@ import ProjectCard from '../components/atom/ProjectCard';
 const Container = styled.div`
     min-height: 100vh;
     padding: 60px;
+    @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+        padding: 60px 5px;
+    }
 `;
 
 const Box = styled.div`

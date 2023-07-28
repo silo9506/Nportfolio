@@ -12,6 +12,15 @@ interface IcircleVariants {
     radius: string;
     index: number;
 }
+const Container = styled.div`
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+`;
 
 const Wrapper = styled(motion.div)`
     position: relative;
@@ -19,7 +28,7 @@ const Wrapper = styled(motion.div)`
     font-family: 'Bellefair', serif;
     height: 70%;
     width: 100%;
-    max-width: 700px;
+    /* max-width: 700px; */
     height: 50%;
 `;
 const CategoryWrapper = styled(motion.div)`
@@ -36,6 +45,7 @@ const Circle = styled(motion.div)`
     border-radius: ${(props) => props.theme.borderRadius || '0px'};
     position: absolute;
     max-width: 550px;
+    width: 100%;
     margin: 0 auto;
     top: 0;
     left: 0;
@@ -126,14 +136,6 @@ const circleVariants = {
 };
 
 export default function Profile() {
-    const Container = styled.div`
-        position: relative;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    `;
-
     return (
         <Container>
             <Wrapper>

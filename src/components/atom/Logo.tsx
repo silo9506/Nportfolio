@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
-    user-select: none;
-`;
+const Container = styled.div``;
 
 const Title = styled.h1<{ skew: number; top1: number; btm1: number; top2: number; btm2: number }>`
     position: relative;

@@ -7,18 +7,24 @@ import Nav from './components/molecule/Nav';
 import NoiseEffect from './components/atom/NoiseEffect';
 
 const Wrapper = styled.div`
-    padding-top: 60px;
+    width: 100%;
+    padding-top: 75px;
+`;
+const Container = styled.div`
+    position: relative;
 `;
 
 function App() {
     return (
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
-            <NoiseEffect />
-            <Nav />
-            <Wrapper>
-                <Router />
-            </Wrapper>
-        </BrowserRouter>
+        <Container>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
+                <Nav />
+                <NoiseEffect />
+                <Wrapper>
+                    <Router />
+                </Wrapper>
+            </BrowserRouter>
+        </Container>
     );
 }
 
