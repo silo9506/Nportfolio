@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.js": "/Nportfolio/static/js/main.a6ff820a.js",
+    "static/js/787.9255539e.chunk.js": "/Nportfolio/static/js/787.9255539e.chunk.js",
+    "static/media/todo02.png": "/Nportfolio/static/media/todo02.2e84fa22ea0b889fce48.png",
+    "static/media/Youtube01.png": "/Nportfolio/static/media/Youtube01.aa534b0a39c4374bca4c.png",
+    "static/media/NetFlix02.png": "/Nportfolio/static/media/NetFlix02.50d27eb0988413e9cf37.png",
+    "static/media/Youtube03.png": "/Nportfolio/static/media/Youtube03.ad39a3187f74901982c9.png",
+    "static/media/MB03.png": "/Nportfolio/static/media/MB03.c8f5b303995d2db5f01c.png",
+    "static/media/NetFlix03.png": "/Nportfolio/static/media/NetFlix03.47d97e6114e17b1132a3.png",
+    "static/media/Youtube02.png": "/Nportfolio/static/media/Youtube02.c384d2d4e93c8e4c6561.png",
+    "static/media/NetFlix01.png": "/Nportfolio/static/media/NetFlix01.4faf368fc5e2ce70f536.png",
+    "static/media/Shopping01.png": "/Nportfolio/static/media/Shopping01.cc9efa517b3f795d642b.png",
+    "static/media/MB01.png": "/Nportfolio/static/media/MB01.ef2ec10e9aef3db5ddd6.png",
+    "static/media/MB02.png": "/Nportfolio/static/media/MB02.fd92c2ec697acbeb6351.png",
+    "static/media/todo01.png": "/Nportfolio/static/media/todo01.f3dfe3f9680c0f7ab035.png",
+    "static/media/Shopping04.png": "/Nportfolio/static/media/Shopping04.963bea6d20a38162ba81.png",
+    "static/media/Shopping03.png": "/Nportfolio/static/media/Shopping03.9d7d9b03e93246307eee.png",
+    "static/media/Shopping02.png": "/Nportfolio/static/media/Shopping02.39fdf637338643428b6f.png",
+    "static/media/firebase.png": "/Nportfolio/static/media/firebase.5aa7cf22cd45ec6bbec2.png",
+    "static/media/html.png": "/Nportfolio/static/media/html.f3aa7827cd5160f3fc1c.png",
+    "static/media/redux.png": "/Nportfolio/static/media/redux.5de70b7bc0d2556a0958.png",
+    "static/media/css.png": "/Nportfolio/static/media/css.1334cb45a7d5ad096543.png",
+    "static/media/js.png": "/Nportfolio/static/media/js.166865dacb77d214f485.png",
+    "static/media/react.png": "/Nportfolio/static/media/react.20adfb35ae6a6e5817bf.png",
+    "index.html": "/Nportfolio/index.html",
+    "main.a6ff820a.js.map": "/Nportfolio/static/js/main.a6ff820a.js.map",
+    "787.9255539e.chunk.js.map": "/Nportfolio/static/js/787.9255539e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.a6ff820a.js"
+  ]
+}
