@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import Router from './Router';
+import Nav from './components/molecule/Nav';
+import NoiseEffect from './components/atom/NoiseEffect';
+
+const Wrapper = styled.div`
+    padding-top: 60px;
+`;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+            <NoiseEffect />
+            <Nav />
+            <Wrapper>
+                <Router />
+            </Wrapper>
+        </BrowserRouter>
+    );
 }
 
 export default App;
