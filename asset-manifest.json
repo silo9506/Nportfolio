@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/Nportfolio/static/js/main.95fdb37e.js",
+    "main.js": "/Nportfolio/static/js/main.ffbdcaf7.js",
     "static/js/787.9255539e.chunk.js": "/Nportfolio/static/js/787.9255539e.chunk.js",
     "static/media/todo02.png": "/Nportfolio/static/media/todo02.2e84fa22ea0b889fce48.png",
     "static/media/Youtube01.png": "/Nportfolio/static/media/Youtube01.aa534b0a39c4374bca4c.png",
@@ -12,6 +12,7 @@
     "static/media/NetFlix01.png": "/Nportfolio/static/media/NetFlix01.4faf368fc5e2ce70f536.png",
     "static/media/Shopping01.png": "/Nportfolio/static/media/Shopping01.cc9efa517b3f795d642b.png",
     "static/media/MB01.png": "/Nportfolio/static/media/MB01.ef2ec10e9aef3db5ddd6.png",
+    "static/media/me.jpg": "/Nportfolio/static/media/me.a62da654394a55ca50cb.jpg",
     "static/media/MB02.png": "/Nportfolio/static/media/MB02.fd92c2ec697acbeb6351.png",
     "static/media/todo01.png": "/Nportfolio/static/media/todo01.f3dfe3f9680c0f7ab035.png",
     "static/media/Shopping04.png": "/Nportfolio/static/media/Shopping04.963bea6d20a38162ba81.png",
@@ -24,10 +25,10 @@
     "static/media/js.png": "/Nportfolio/static/media/js.166865dacb77d214f485.png",
     "static/media/react.png": "/Nportfolio/static/media/react.20adfb35ae6a6e5817bf.png",
     "index.html": "/Nportfolio/index.html",
-    "main.95fdb37e.js.map": "/Nportfolio/static/js/main.95fdb37e.js.map",
+    "main.ffbdcaf7.js.map": "/Nportfolio/static/js/main.ffbdcaf7.js.map",
     "787.9255539e.chunk.js.map": "/Nportfolio/static/js/787.9255539e.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.95fdb37e.js"
+    "static/js/main.ffbdcaf7.js"
   ]
 }
