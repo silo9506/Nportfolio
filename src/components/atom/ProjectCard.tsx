@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { styled } from 'styled-components';
 import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi';
 import { BsGithub } from 'react-icons/bs';
@@ -165,40 +165,18 @@ const imgVariants = {
 
 const containerVariants = {
     init: {
-        scale: 0,
+        scale: [0.1],
         opacity: 0,
     },
-    show: (isCardVisible: boolean) => ({
-        scale: isCardVisible ? 1 : 0,
-        opacity: 1,
+    show: () => ({
+        scale: 1,
+        opacity: [0, 1],
     }),
 };
 
 export default function ProjectCard(project: IProjectCard) {
     const [index, setIndex] = useState(1);
     const [forward, setForward] = useState<null | boolean>(null);
-    const [isCardVisible, setIsCardVisible] = useState(true);
-
-    console.log(isCardVisible);
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                setIsCardVisible(entries[0].isIntersecting);
-            },
-            { threshold: 0.05 }
-        );
-
-        const element = document.getElementById(`project-${project.title}`); // ProjectCard의 id를 지정할 때 사용합니다.
-        if (element) {
-            observer.observe(element);
-        }
-
-        return () => {
-            if (element) {
-                observer.unobserve(element);
-            }
-        };
-    }, [project.title, isCardVisible]);
 
     const onClickNext = () => {
         setForward(true);
@@ -221,13 +199,7 @@ export default function ProjectCard(project: IProjectCard) {
     };
 
     return (
-        <Container
-            id={`project-${project.title}`}
-            animate="show"
-            initial="init"
-            variants={containerVariants}
-            custom={isCardVisible}
-        >
+        <Container viewport={{ amount: 0 }} initial="init" variants={containerVariants} whileInView="show">
             <h1>{project.title}</h1>
             <Wrapper>
                 <ImgBox>

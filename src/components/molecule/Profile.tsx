@@ -42,7 +42,7 @@ const CategoryWrapper = styled(motion.div)`
 
 const Circle = styled(motion.div)`
     background-color: red;
-    border-radius: ${(props) => props.theme.borderRadius || '0px'};
+    /* border-radius: ${(props) => props.theme.borderRadius || '0px'}; */
     position: absolute;
     max-width: 550px;
     width: 100%;
@@ -119,13 +119,17 @@ const Title = styled.div`
 const circleVariants = {
     animate: (custom: IcircleVariants) => ({
         opacity: 1,
-        scale: 1 + custom.index / 100,
+        scale: [0, 0.2, 0.4, 0.6, 0.8, 1 + custom.index / 100],
         rotate: 360,
-        borderRadius: custom.radius,
+        borderRadius: [0, custom.radius],
         transition: {
-            scale: { duration: 2, ease: 'linear', delay: custom.index },
-            borderRadius: { duration: 3, delay: custom.index, ease: 'linear' },
-            rotate: { duration: 6 + custom.index, delay: custom.index * 2, ease: 'linear', repeat: Infinity },
+            scale: { duration: 1, delay: custom.index },
+            borderRadius: { duration: 1, delay: custom.index + 0.5, ease: 'circIn', times: [0.8, 1] },
+            rotate: {
+                duration: 3 + custom.index,
+                delay: custom.index === 3 ? custom.index * 2 - 1 : custom.index * 2 + 1,
+                repeat: Infinity,
+            },
         },
     }),
     initial: (delay: number) => ({
@@ -158,9 +162,9 @@ export default function Profile() {
                     custom={{ index: 3, radius: '40% 40% 50% 40%/30% 50% 50% 50%' }}
                 />
                 <CategoryWrapper
-                    initial={{ scale: 0, opacity: 0 }}
+                    initial={{ scale: 0.1, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
-                    transition={{ delay: 6, duration: 1, type: 'twwen' }}
+                    transition={{ delay: 5, duration: 1, type: 'twwen' }}
                 >
                     <Category>
                         <Title>
