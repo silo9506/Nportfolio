@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import About from './router/About';
 import Project from './router/Project';
 import Contact from './router/Contact';
 import Home from './router/Home';
@@ -18,26 +17,18 @@ function Router() {
                     index
                     element={
                         <TransitionComponents>
-                            <Project />
+                            <Home />
                         </TransitionComponents>
                     }
                 />
                 <Route
-                    path="contact"
-                    element={
-                        <TransitionComponents>
-                            <About />
-                        </TransitionComponents>
-                    }
-                />
-                {/* <Route
                     path="project"
                     element={
                         <TransitionComponents>
                             <Project />
                         </TransitionComponents>
                     }
-                /> */}
+                />
             </Routes>
         </AnimatePresence>
     );

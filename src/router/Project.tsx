@@ -5,17 +5,12 @@ import ProjectCard from '../components/atom/ProjectCard';
 
 const Container = styled.div`
     min-height: 100vh;
-    padding: 60px;
-    @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
-        padding: 60px 5px;
-    }
 `;
 
 const Box = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 1050px;
     margin: 0 auto;
 `;
 

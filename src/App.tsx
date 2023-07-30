@@ -5,13 +5,25 @@ import { motion } from 'framer-motion';
 import Router from './Router';
 import Nav from './components/molecule/Nav';
 import NoiseEffect from './components/atom/NoiseEffect';
-
-const Wrapper = styled.div`
-    width: 100%;
+const Container = styled.div`
+    max-width: 1050px;
+    position: relative;
+    margin: 0 auto;
     padding-top: 75px;
 `;
-const Container = styled.div`
-    position: relative;
+const Wrapper = styled.div`
+    margin: 0 auto;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    padding: 0px 20px;
+
+    @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+        padding: 0px 10px;
+    }
+    @media screen and (max-width: ${(props) => props.theme.breakpoints.sd}) {
+        padding: 0px 5px;
+    }
 `;
 
 function App() {

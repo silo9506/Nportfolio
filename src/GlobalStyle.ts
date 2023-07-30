@@ -8,8 +8,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body{
+        overflow-x: hidden;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        /* background-color: ${(props) => props.theme.colors.bg}; */
         background-color: #111111;  
         color:${(props) => props.theme.colors.text}
     }

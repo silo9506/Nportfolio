@@ -13,14 +13,16 @@ const Contanier = styled(motion.nav)`
     font-weight: bold;
     z-index: 20;
     background-color: transparent;
+    display: flex;
+    justify-content: center;
 `;
 
 const Box = styled.div`
     height: 75px;
     padding: 10px 10px;
     max-width: 1050px;
-    margin: auto;
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
 `;
@@ -65,8 +67,7 @@ export default function Nav() {
                 <Logo />
                 <Links>
                     <Link to="/">Home</Link>
-                    {/* <Link to="/project">Project</Link> */}
-                    <Link to="/contact">About</Link>
+                    <Link to="/project">Project</Link>
                 </Links>
             </Box>
         </Contanier>

@@ -15,7 +15,7 @@ const Container = styled(motion.div)`
         text-align: center;
     }
     @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
-        padding: 20px 0px;
+        padding: 20px 10px;
     }
 `;
 
@@ -40,7 +40,6 @@ const ImgBox = styled.div`
             pointer-events: auto;
         }
     }
-
     @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
         padding: 0 5px;
     }
@@ -165,12 +164,13 @@ const imgVariants = {
 
 const containerVariants = {
     init: {
-        scale: [0.1],
+        scale: 0.1,
         opacity: 0,
     },
     show: () => ({
         scale: 1,
-        opacity: [0, 1],
+        opacity: 1,
+        skew: [-180, 180],
     }),
 };
 

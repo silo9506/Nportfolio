@@ -10,26 +10,15 @@ import reactIcon from '../../assets/img/react.png';
 import reduxIcon from '../../assets/img/redux.png';
 interface IcircleVariants {
     radius: string;
-    index: number;
+    duration: number;
 }
-const Container = styled.div`
-    width: 100%;
-    position: relative;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-`;
 
 const Wrapper = styled(motion.div)`
+    padding: 80px 0px;
     position: relative;
     color: white;
     font-family: 'Bellefair', serif;
-    height: 70%;
     width: 100%;
-    /* max-width: 700px; */
-    height: 50%;
 `;
 const CategoryWrapper = styled(motion.div)`
     display: flex;
@@ -42,7 +31,6 @@ const CategoryWrapper = styled(motion.div)`
 
 const Circle = styled(motion.div)`
     background-color: red;
-    /* border-radius: ${(props) => props.theme.borderRadius || '0px'}; */
     position: absolute;
     max-width: 550px;
     width: 100%;
@@ -51,8 +39,6 @@ const Circle = styled(motion.div)`
     left: 0;
     right: 0;
     bottom: 0;
-    /* width: 300px;
-height: 300px; */
     &:nth-child(1) {
         background: #333333;
         z-index: -4;
@@ -117,112 +103,108 @@ const Title = styled.div`
 `;
 
 const circleVariants = {
+    initial: {
+        x: '200%',
+    },
     animate: (custom: IcircleVariants) => ({
-        opacity: 1,
-        scale: [0, 0.2, 0.4, 0.6, 0.8, 1 + custom.index / 100],
-        rotate: 360,
-        borderRadius: [0, custom.radius],
+        x: 0,
+        borderRadius: custom.radius,
+        rotate: -360,
         transition: {
-            scale: { duration: 1, delay: custom.index },
-            borderRadius: { duration: 1, delay: custom.index + 0.5, ease: 'circIn', times: [0.8, 1] },
+            duration: 3 + custom.duration,
+            delay: custom.duration,
             rotate: {
-                duration: 3 + custom.index,
-                delay: custom.index === 3 ? custom.index * 2 - 1 : custom.index * 2 + 1,
+                duration: 4 + custom.duration,
+                delay: custom.duration,
+                ease: 'linear',
                 repeat: Infinity,
             },
         },
     }),
-    initial: (delay: number) => ({
-        opacity: 0,
-        scale: 0,
-        borderRadius: '0px',
-    }),
 };
 
-export default function Profile() {
+export default function Contact() {
     return (
-        <Container>
-            <Wrapper>
-                <Circle
-                    initial="initial"
-                    animate="animate"
-                    variants={circleVariants}
-                    custom={{ index: 1, radius: '50% 50% 50% 70%/50% 50% 70% 60%' }}
-                />
-                <Circle
-                    initial="initial"
-                    animate="animate"
-                    variants={circleVariants}
-                    custom={{ index: 2, radius: '80% 30% 50% 50%/50%' }}
-                />
-                <Circle
-                    initial="initial"
-                    animate="animate"
-                    variants={circleVariants}
-                    custom={{ index: 3, radius: '40% 40% 50% 40%/30% 50% 50% 50%' }}
-                />
-                <CategoryWrapper
-                    initial={{ scale: 0.1, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ delay: 5, duration: 1, type: 'twwen' }}
-                >
-                    <Category>
-                        <Title>
-                            <GrUser />
-                            Profile
-                        </Title>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>이름</td>
-                                    <td>김현철</td>
-                                </tr>
-                                <tr>
-                                    <td>생년월일</td>
-                                    <td>1995.04.23</td>
-                                </tr>
-                                <tr>
-                                    <td>거주지</td>
-                                    <td>서울 강북구 수유동</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </Category>
-                    <Category>
-                        <Title>
-                            <GrContact />
-                            Contact
-                        </Title>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>Tel</td>
-                                    <td>010 9506 2826</td>
-                                </tr>
-                                <tr>
-                                    <td>Email</td>
-                                    <td>silo9506@gmail.com</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </Category>
+        <Wrapper>
+            <Circle
+                initial="initial"
+                animate="animate"
+                variants={circleVariants}
+                custom={{ duration: 0, radius: '50% 50% 50% 70%/50% 50% 70% 60%' }}
+            />
+            <Circle
+                initial="initial"
+                animate="animate"
+                variants={circleVariants}
+                custom={{ duration: 0.5, radius: '80% 30% 50% 50%/50%' }}
+            />
+            <Circle
+                initial="initial"
+                animate="animate"
+                variants={circleVariants}
+                custom={{ duration: 1, radius: '40% 40% 50% 40%/30% 50% 50% 50%' }}
+            />
+            <CategoryWrapper
+                initial={{ scale: 0.1, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 5, duration: 1, type: 'twwen' }}
+            >
+                <Category>
+                    <Title>
+                        <GrUser />
+                        Profile
+                    </Title>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>이름</td>
+                                <td>김현철</td>
+                            </tr>
+                            <tr>
+                                <td>생년월일</td>
+                                <td>1995.04.23</td>
+                            </tr>
+                            <tr>
+                                <td>거주지</td>
+                                <td>서울 강북구 수유동</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </Category>
+                <Category>
+                    <Title>
+                        <GrContact />
+                        Contact
+                    </Title>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Tel</td>
+                                <td>010 9506 2826</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>silo9506@gmail.com</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </Category>
 
-                    <Category>
-                        <Title>
-                            <GrSettingsOption />
-                            Skill
-                        </Title>
-                        <div className="iconBox">
-                            <img className="skillIcon" alt="skillIcon" src={cssIcon}></img>
-                            <img className="skillIcon" alt="skillIcon" src={jsIcon}></img>
-                            <img className="skillIcon" alt="skillIcon" src={htmlIcon}></img>
-                            <img className="skillIcon" alt="skillIcon" src={firebaseIcon}></img>
-                            <img className="skillIcon" alt="skillIcon" src={reactIcon}></img>
-                            <img className="skillIcon" alt="skillIcon" src={reduxIcon}></img>
-                        </div>
-                    </Category>
-                </CategoryWrapper>
-            </Wrapper>
-        </Container>
+                <Category>
+                    <Title>
+                        <GrSettingsOption />
+                        Skill
+                    </Title>
+                    <div className="iconBox">
+                        <img className="skillIcon" alt="skillIcon" src={cssIcon}></img>
+                        <img className="skillIcon" alt="skillIcon" src={jsIcon}></img>
+                        <img className="skillIcon" alt="skillIcon" src={htmlIcon}></img>
+                        <img className="skillIcon" alt="skillIcon" src={firebaseIcon}></img>
+                        <img className="skillIcon" alt="skillIcon" src={reactIcon}></img>
+                        <img className="skillIcon" alt="skillIcon" src={reduxIcon}></img>
+                    </div>
+                </Category>
+            </CategoryWrapper>
+        </Wrapper>
     );
 }
